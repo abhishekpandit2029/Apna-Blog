@@ -9,7 +9,6 @@ export default function BlogList() {
   const { displayedBlogs, hasMore } = state;
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log("state", state);
   const handleIntersect = useCallback(async () => {
     if (hasMore && !isLoading) {
       setIsLoading(true);

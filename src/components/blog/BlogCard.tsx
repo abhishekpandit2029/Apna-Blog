@@ -12,7 +12,6 @@ export default function BlogCard({ blog, onClick }: BlogCardProps) {
   const { likeBlog } = useBlog();
 
   const handleLike = (e: React.MouseEvent) => {
-    console.log("blog e", e);
     e.stopPropagation();
     likeBlog(blog.id);
   };
