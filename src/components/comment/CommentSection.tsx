@@ -1,6 +1,6 @@
-import { Comment as CommentType } from '../context/types';
-import Comment from './Comment';
-import CommentForm from './CommentForm';
+import { Comment as CommentType } from "../../context/types";
+import Comment from "./Comment";
+import CommentForm from "./CommentForm";
 
 interface CommentSectionProps {
   comments: CommentType[];
@@ -11,7 +11,7 @@ interface CommentSectionProps {
 export default function CommentSection({
   comments,
   onAddComment,
-  onAddReply
+  onAddReply,
 }: CommentSectionProps) {
   return (
     <div>
@@ -23,7 +23,9 @@ export default function CommentSection({
 
       <div className="space-y-3">
         {comments.length === 0 ? (
-          <p className="text-gray-500 italic text-center py-4">Be the first to comment!</p>
+          <p className="text-gray-500 italic text-center py-4">
+            Be the first to comment!
+          </p>
         ) : (
           comments.map((comment) => (
             <Comment
@@ -36,4 +38,4 @@ export default function CommentSection({
       </div>
     </div>
   );
-};
+}

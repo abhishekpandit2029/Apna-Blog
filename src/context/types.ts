@@ -1,9 +1,9 @@
 // Action Types
-export const LIKE_BLOG = 'LIKE_BLOG';
-export const ADD_COMMENT = 'ADD_COMMENT';
-export const LOAD_MORE = 'LOAD_MORE';
-export const SET_ACTIVE_BLOG = 'SET_ACTIVE_BLOG';
-export const INCREMENT_SHARES = 'INCREMENT_SHARES';
+export const LIKE_BLOG = "LIKE_BLOG";
+export const ADD_COMMENT = "ADD_COMMENT";
+export const LOAD_MORE = "LOAD_MORE";
+export const SET_ACTIVE_BLOG = "SET_ACTIVE_BLOG";
+export const INCREMENT_SHARES = "INCREMENT_SHARES";
 
 // Type Definitions
 export interface Comment {
@@ -20,8 +20,9 @@ export interface Blog {
   text: string;
   imageUrl: string;
   likes: number;
-  shares: number;
+  likedByMe: boolean;
   comments: Comment[];
+  shares: number;
 }
 
 export interface BlogState {
@@ -61,4 +62,4 @@ export type BlogActionTypes =
   | LikeBlogAction
   | AddCommentAction
   | LoadMoreAction
-  | SetActiveBlogAction
+  | SetActiveBlogAction;

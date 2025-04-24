@@ -6,7 +6,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <BookOpen className="text-indigo-600" size={28} />
-          <h1 className="text-xl font-bold text-gray-800">BlogHaven</h1>
+          <h1 className="text-xl font-bold text-gray-800">Apna Blog</h1>
         </div>
 
         <nav className="hidden md:flex items-center space-x-6">

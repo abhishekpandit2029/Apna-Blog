@@ -1,14 +1,15 @@
-import { useCallback, useState } from 'react';
-import { useBlog } from '../context/BlogContext';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import BlogCard from './BlogCard';
-import { Loader } from 'lucide-react';
+import { useCallback, useState } from "react";
+import { useBlog } from "../../context/BlogContext";
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import BlogCard from "./BlogCard";
+import { Loader } from "lucide-react";
 
 export default function BlogList() {
   const { state, loadMore, setActiveBlog } = useBlog();
   const { displayedBlogs, hasMore } = state;
   const [isLoading, setIsLoading] = useState(false);
 
+  console.log("state", state);
   const handleIntersect = useCallback(async () => {
     if (hasMore && !isLoading) {
       setIsLoading(true);
@@ -22,9 +23,9 @@ export default function BlogList() {
 
   const loaderRef = useIntersectionObserver<HTMLDivElement>({
     threshold: 0.1,
-    rootMargin: '100px',
+    rootMargin: "100px",
     onIntersect: handleIntersect,
-    enabled: hasMore && !isLoading
+    enabled: hasMore && !isLoading,
   });
 
   return (
@@ -44,10 +45,7 @@ export default function BlogList() {
       </div>
 
       {(hasMore || isLoading) && (
-        <div
-          ref={loaderRef}
-          className="flex justify-center mt-8 py-4"
-        >
+        <div ref={loaderRef} className="flex justify-center mt-8 py-4">
           <Loader />
         </div>
       )}

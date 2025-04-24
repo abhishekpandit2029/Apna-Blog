@@ -1,6 +1,6 @@
 import { BlogProvider } from './context/BlogContext';
-import BlogList from './components/BlogList';
-import BlogDetail from './components/BlogDetail';
+import BlogList from './components/blog/BlogList';
+import BlogDetail from './components/blog/BlogDetail';
 import Header from './components/Header';
 
 function App() {

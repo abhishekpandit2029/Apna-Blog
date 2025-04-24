@@ -1,7 +1,7 @@
-import { useBlog } from '../context/BlogContext';
-import { X } from 'lucide-react';
-import CommentSection from './CommentSection';
-import { Comment } from '../context/types';
+import { useBlog } from "../../context/BlogContext";
+import { X } from "lucide-react";
+import CommentSection from "../comment/CommentSection";
+import { Comment } from "../../context/types";
 
 export default function BlogDetail() {
   const { state, setActiveBlog, addComment } = useBlog();
@@ -19,9 +19,9 @@ export default function BlogDetail() {
     const newComment: Comment = {
       id: Date.now().toString(),
       text,
-      author: 'User',
+      author: "User",
       timestamp: new Date(),
-      replies: []
+      replies: [],
     };
 
     addComment(activeBlog.id, newComment);
@@ -31,9 +31,9 @@ export default function BlogDetail() {
     const newReply: Comment = {
       id: Date.now().toString(),
       text,
-      author: 'User',
+      author: "User",
       timestamp: new Date(),
-      replies: []
+      replies: [],
     };
 
     addComment(activeBlog.id, newReply, parentCommentId);
@@ -57,7 +57,9 @@ export default function BlogDetail() {
           />
 
           <div className="p-6">
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">{activeBlog.title}</h1>
+            <h1 className="text-2xl font-bold text-gray-900 mb-4">
+              {activeBlog.title}
+            </h1>
             <p className="text-gray-700 mb-6">{activeBlog.text}</p>
 
             <CommentSection
@@ -70,4 +72,4 @@ export default function BlogDetail() {
       </div>
     </div>
   );
-};
+}
